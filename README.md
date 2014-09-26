@@ -1,4 +1,4 @@
 memoizationJS
 =============
 
-Memoization implementation in Javascript
+Memoization implementation in Javascript & Python
