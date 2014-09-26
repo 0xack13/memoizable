@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src="mem.js"></script>
+
+<script>
+function fibonacci(n) {
+    if (n === 0) {
+        return 0;
+    } else if (n === 1) {
+        return 1;
+    }
+
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.time('Plain function call');
+
+for (var i = 0; i < 3; i++) {
+    fibonacci(40);
+}
+
+console.timeEnd('Plain function call');
+
+var fibonacciFromCache = memoize(fibonacci);
+
+console.time('Memoized function call');
+for (var i = 0; i < 3; i++) {
+    fibonacciFromCache(40);
+}
+console.timeEnd('Memoized function call');
+
+</script>
+
+</head>
+
+<body>
+</body>
+</html>
