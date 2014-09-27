@@ -3,6 +3,8 @@ function memoize(fn, sort) {
     var cache = {};
 
     return function () {
+        //Convert function's arguments to Array
+        //Default type of the "arguments" is Object which can't be sliced.
         var args = Array.prototype.slice.call(arguments);
 
         if (sort) {
